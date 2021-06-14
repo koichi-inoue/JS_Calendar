@@ -126,6 +126,7 @@ function setCalendar(year, month) {
         date++;
       }
     }
+    if (date > days) break;
   }
 
 }
