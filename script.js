@@ -1,29 +1,29 @@
 // Setup /////////////////////////////////
 
 let monthsOfTheYear = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-let dayOfWeek = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+let daysOfTheWeek = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
-// Set Years Option
+// Set Years > Option
 let yearsList = "";
 for (let y = 2000; y <= 2100; y++) {
   yearsList += "<option value='" + y + "'>" + y + "</option>";
 }
 document.getElementById("year").innerHTML = yearsList;
 
-// Set Months of the Year Option
+// Set Months of the Year > Option
 let monthsOfTheYearList = "";
 for (let m = 0; m <= 12; m++) {
   monthsOfTheYearList += "<option value='" + m + "'>" + monthsOfTheYear[m] + "</option>";
 }
 document.getElementById("month").innerHTML = monthsOfTheYearList;
 
-// Set Day of Week
-let dayOfWeekList = "<tr>";
-for (let d in dayOfWeek) {
-  dayOfWeekList += "<th data-days='" + dayOfWeek[d] + "'>" + dayOfWeek[d] + "</th>";
+// Set Days of the Week > Table Head
+let daysOfTheWeekList = "<tr>";
+for (let d in daysOfTheWeek) {
+  daysOfTheWeekList += "<th data-days='" + daysOfTheWeek[d] + "'>" + daysOfTheWeek[d] + "</th>";
 }
-dayOfWeekList += "</tr>";
-document.getElementById("theadMonth").innerHTML = dayOfWeekList;
+daysOfTheWeekList += "</tr>";
+document.getElementById("theadMonth").innerHTML = daysOfTheWeekList;
 
 // Add Event Listener
 let selectYear = document.getElementById("year");
@@ -48,7 +48,7 @@ let calendar = document.getElementById("calendar");
 setCalendar(thisYear, thisMonth);
 
 
-// Functions ////////////////////////////
+// Functions //////////////////////////////////////
 
 // 日付がクリックされたときのイベントサンプル
 function displayDate() {
