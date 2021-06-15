@@ -23,7 +23,7 @@ for (let d in daysOfTheWeek) {
   daysOfTheWeekList += "<th data-days='" + daysOfTheWeek[d] + "'>" + daysOfTheWeek[d] + "</th>";
 }
 daysOfTheWeekList += "</tr>";
-document.getElementById("theadMonth").innerHTML = daysOfTheWeekList;
+document.getElementById("calendarHead").innerHTML = daysOfTheWeekList;
 
 // Add Event Listener
 let selectYear = document.getElementById("year");
@@ -42,7 +42,6 @@ nxt.addEventListener('click', moveNext, false);
 let today = new Date();
 let thisMonth = today.getMonth();
 let thisYear = today.getFullYear();
-let calendar = document.getElementById("calendar");
 
 // Set Today’s Tabele Calendar
 setCalendar(thisYear, thisMonth);
