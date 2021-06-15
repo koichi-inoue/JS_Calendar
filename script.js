@@ -64,10 +64,10 @@ function setCalendar(year, month) {
   selectYear.value = year;
   selectMonth.value = month;
 
-  // 当該年月の 1日の曜日を取得
-  let firstDay = new Date( year, month ).getDay();
   // 当該年月の日数を取得（ 当月末日 = 翌月の0日 が何日かを取得）
   let days = new Date(year, month+1, 0).getDate();
+  // 当該年月の 1日の曜日を取得
+  let firstDay = new Date( year, month ).getDay();
 
 　// Calendar td の追加生成
   let tbl = document.getElementById("calendarBody");
