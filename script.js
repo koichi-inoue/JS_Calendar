@@ -1,21 +1,21 @@
 // Setup /////////////////////////////////
 
-let monthsOfTheYear = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-let daysOfTheWeek = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+let monthsOfTheYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+let daysOfTheWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
 // Set Years > Option
 let yearsList = "";
 for (let y = 2000; y <= 2100; y++) {
   yearsList += "<option value='" + y + "'>" + y + "</option>";
 }
-document.getElementById("year").innerHTML = yearsList;
+document.getElementById('year').innerHTML = yearsList;
 
 // Set Months of the Year > Option
 let monthsOfTheYearList = "";
 for (let m = 0; m <= 12; m++) {
   monthsOfTheYearList += "<option value='" + m + "'>" + monthsOfTheYear[m] + "</option>";
 }
-document.getElementById("month").innerHTML = monthsOfTheYearList;
+document.getElementById('month').innerHTML = monthsOfTheYearList;
 
 // Set Days of the Week > Table Head
 let daysOfTheWeekList = "<tr>";
@@ -23,19 +23,19 @@ for (let d in daysOfTheWeek) {
   daysOfTheWeekList += "<th data-days='" + daysOfTheWeek[d] + "'>" + daysOfTheWeek[d] + "</th>";
 }
 daysOfTheWeekList += "</tr>";
-document.getElementById("calendarHead").innerHTML = daysOfTheWeekList;
+document.getElementById('calendarHead').innerHTML = daysOfTheWeekList;
 
 // Add Event Listener
-let selectYear = document.getElementById("year");
+let selectYear = document.getElementById('year');
 selectYear.addEventListener('click', changeView, false);
 
-let selectMonth = document.getElementById("month");
+let selectMonth = document.getElementById('month');
 selectMonth.addEventListener('click', changeView, false);
 
-let prv = document.getElementById("previous");
+let prv = document.getElementById('previous');
 prv.addEventListener('click', movePrevious, false);
 
-let nxt = document.getElementById("next");
+let nxt = document.getElementById('next');
 nxt.addEventListener('click', moveNext, false);
 
 // Get Date Information
@@ -70,18 +70,18 @@ function setCalendar(year, month) {
   let firstDay = new Date( year, month ).getDay();
 
 　// Calendar td の追加生成
-  let tbl = document.getElementById("calendarBody");
+  let tbl = document.getElementById('calendarBody');
   tbl.innerHTML = "";
   let date = 1;
 
   for ( var i = 0; i < 6; i++ ) {
 
-    var row = document.createElement("tr");
+    var row = document.createElement('tr');
 
     for ( var j = 0; j < 7; j++ ) {
 
-      cell = document.createElement("td");
-      cell.className = "date";
+      cell = document.createElement('td');
+      cell.className = 'date';
 
       if ( i === 0 && j < firstDay ) {
         cell.innerHTML ="";
@@ -92,7 +92,7 @@ function setCalendar(year, month) {
         if ( date === today.getDate()
           && year === today.getFullYear()
           && month === today.getMonth() ) {
-          cell.id = "today";
+          cell.id = 'today';
         }
         date++;
       }
